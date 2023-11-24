@@ -10,7 +10,7 @@ public class MasterPlayer_Input : MonoBehaviour
 
     Rigidbody2D Player_Rigidbody;
 
-    [SerializeField] float PlayerMovementSpeed = 5;
+    float PlayerMovementSpeed = 10;
 
     // Start is called before the first frame update
     void Start()
