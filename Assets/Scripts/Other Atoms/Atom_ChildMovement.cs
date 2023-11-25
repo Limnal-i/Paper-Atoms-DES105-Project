@@ -17,7 +17,7 @@ public class Atom_ChildMovement : MonoBehaviour
     {
         Atom_Rigidbody = GetComponent<Rigidbody2D>();
 
-        targetAtomMovement = getNearestAtom();
+        targetAtomMovement = getNearestAtom(); /// returns closest Atom (nonplayer)
     }
 
     //Fixed Update is used for physics as framerate and physics are updated at different intervals 
@@ -31,71 +31,35 @@ public class Atom_ChildMovement : MonoBehaviour
         Atom_Rigidbody.velocity = ChildAtomMovement;
     }
 
+    // This entire thing is based on the Unity Doucumentation code https://docs.unity3d.com/ScriptReference/GameObject.FindGameObjectsWithTag.html
+    // Did start out with https://forum.unity.com/threads/how-to-find-the-nearest-object.360952/ which... didn't work but got me on the right track
     public GameObject getNearestAtom()
     {
-        GameObject[] AllAtoms;
-        AllAtoms = GameObject.FindGameObjectsWithTag("Atom");
-        GameObject closest = null;
+        GameObject[] AllAtoms; // for use in for loop
 
-        float distance = Mathf.Infinity;
+        AllAtoms = GameObject.FindGameObjectsWithTag("Atom"); // Finds all tagged objects in scene
 
-        Vector3 atomChildPosition = transform.position;
+        GameObject closest = null; // set up for returning later
 
-        foreach (GameObject checkAtom in AllAtoms)
+        float distance = Mathf.Infinity; // distance is forever (entire scene)
+
+        Vector3 atomChildPosition = transform.position; // current position of Object this script is attatched to
+
+        foreach (GameObject checkAtom in AllAtoms) // runs this on every GameObject to check
         {
-            Vector3 difference = checkAtom.transform.position - atomChildPosition;
-            float AtomDistance = difference.sqrMagnitude;
+            Vector3 difference = checkAtom.transform.position - atomChildPosition; // get distance between current object position and GameObject that is being checked
+
+            float AtomDistance = difference.sqrMagnitude; // Gets the magnitude (cool maths that I don't have to do)
+
             if (AtomDistance < distance)
             {
                 closest = checkAtom;
                 distance = AtomDistance;
+
+                // Checks if Object it is checking has a distance lesser than the current Max distance. Then it sets the closest object to it and updates the max distance to that.
             }
         }
-        Debug.Log(closest.name);
-        return closest;
+        Debug.Log(closest.name); // prints out nearest Object with correct tag once all have been checked
+        return closest; // Returns nearest Object with tag
     }
-
-
-    /*oh boy
-     * https://forum.unity.com/threads/how-to-find-the-nearest-object.360952/
-     * 
-     * public GameObject GetClosestObject()
-    {
-      float closest = 1000; //add your max range here
-      GameObject closestObject = null;
-      for (int i = 0; i < MyListOfObjects.Count; i++)  //list of gameObjects to search through
-      {
-        float dist = Vector3.Distance(MyListOfObjects[ i ].transform.position, player.transform.position);
-        if (dist < closest)
-        {
-          closest = dist;
-          closestObject = MyListOfObjects[ i ];
-        }
-      }
-    return closestObject;
-    }
-        from documentation
-
-            public GameObject FindClosestEnemy()
-        {
-            GameObject[] gos;
-            gos = GameObject.FindGameObjectsWithTag("Enemy");
-            GameObject closest = null;
-            float distance = Mathf.Infinity;
-            Vector3 position = transform.position;
-            foreach (GameObject go in gos)
-            {
-                Vector3 diff = go.transform.position - position;
-                float curDistance = diff.sqrMagnitude;
-                if (curDistance < distance)
-                {
-                    closest = go;
-                    distance = curDistance;
-                }
-            }
-            return closest;
-        }
-
-
-    */
 }
