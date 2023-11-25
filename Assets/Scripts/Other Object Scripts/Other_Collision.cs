@@ -8,7 +8,8 @@ public class Other_Collision : MonoBehaviour
     PolygonCollider2D polycoll;
     SpriteRenderer spriterend;
 
-    public GameObject test;
+    public GameObject playerObject;
+    public GameObject AtomObject;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +21,21 @@ public class Other_Collision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Atom"))
+        if (collision.gameObject.CompareTag("PlayerAtom"))
         Destroy(spriterend);
         Destroy(ridgid);
         Destroy(polycoll);
 
-        Instantiate(test, gameObject.transform.position, gameObject.transform.rotation);
+        Instantiate(playerObject, gameObject.transform.position, gameObject.transform.rotation);
+
+        Destroy(gameObject);
+
+        if (collision.gameObject.CompareTag("Atom"))
+            Destroy(spriterend);
+        Destroy(ridgid);
+        Destroy(polycoll);
+
+        Instantiate(AtomObject, gameObject.transform.position, gameObject.transform.rotation);
 
         Destroy(gameObject);
     }

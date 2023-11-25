@@ -25,20 +25,15 @@ public class MasterPlayer_Input : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckInputs();
-    }
+        // sets X and Y axis movement and allows WASD, Arrow Keys and Controller input to be used for movement)
+        PlayerMovement.x = Input.GetAxisRaw("Horizontal");
+        PlayerMovement.y = Input.GetAxisRaw("Vertical");
 
-    void CheckInputs()
-    {
-            // sets X and Y axis movement and allows WASD, Arrow Keys and Controller input to be used for movement)
-            PlayerMovement.x = Input.GetAxisRaw("Horizontal");
-            PlayerMovement.y = Input.GetAxisRaw("Vertical");
+        // Add speed to movement
+        PlayerMovement = PlayerMovement * PlayerMovementSpeed;
 
-            // Add speed to movement
-            PlayerMovement = PlayerMovement * PlayerMovementSpeed;
-
-            // Directly assigns values to Attached Ridgidbody
-            Player_Rigidbody.velocity = PlayerMovement;
+        // Directly assigns values to Attached Ridgidbody
+        Player_Rigidbody.velocity = PlayerMovement;
     }
 
 }
