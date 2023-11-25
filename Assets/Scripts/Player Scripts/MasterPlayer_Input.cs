@@ -13,11 +13,11 @@ public class MasterPlayer_Input : MonoBehaviour
 
     float PlayerMovementSpeed = 10;
 
-
     // Start is called before the first frame update
     void Start()
     {
         PlayerMovement = new Vector3();
+
         Player_Rigidbody = GetComponent<Rigidbody2D>();
 
     }

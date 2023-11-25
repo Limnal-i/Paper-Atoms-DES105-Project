@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6510682862738489884}
   m_Layer: 0
   m_Name: test_PlayerAdd Prefab
-  m_TagString: Atom
+  m_TagString: PlayerObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -176,4 +176,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26bdda3e7163eb4bbc4662039b4bdf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 6787707412652408469, guid: 44c0027d8355cd84792961d1685c69fe, type: 3}
+  playerObject: {fileID: 6787707412652408469, guid: 44c0027d8355cd84792961d1685c69fe, type: 3}
+  AtomObject: {fileID: 4835874230661577923, guid: 8672ba1871172154ead8f50e3f3df264, type: 3}

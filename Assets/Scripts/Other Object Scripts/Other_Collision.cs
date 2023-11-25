@@ -21,22 +21,28 @@ public class Other_Collision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("PlayerAtom"))
-        Destroy(spriterend);
-        Destroy(ridgid);
-        Destroy(polycoll);
-
-        Instantiate(playerObject, gameObject.transform.position, gameObject.transform.rotation);
-
-        Destroy(gameObject);
-
-        if (collision.gameObject.CompareTag("Atom"))
+        if (collision.gameObject.CompareTag("PlayerAtom") || collision.gameObject.CompareTag("PlayerObject"))
+        {
+            //turn object invisible and destroy collision detection
             Destroy(spriterend);
-        Destroy(ridgid);
-        Destroy(polycoll);
+            Destroy(ridgid);
+            Destroy(polycoll);
+            //create new object at current position and rotation
+            Instantiate(playerObject, gameObject.transform.position, gameObject.transform.rotation);
+            //destroy self
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Atom") || collision.gameObject.CompareTag("AtomObject"))
+        {
+            //turn object invisible and destroy collision detection
+            Destroy(spriterend);
+            Destroy(ridgid);
+            Destroy(polycoll);
+            //create new object at current position and rotation
+            Instantiate(AtomObject, gameObject.transform.position, gameObject.transform.rotation);
+            //destroy self
+            Destroy(gameObject);
+        }
 
-        Instantiate(AtomObject, gameObject.transform.position, gameObject.transform.rotation);
-
-        Destroy(gameObject);
     }
 }

@@ -4,26 +4,31 @@ using UnityEngine;
 
 public class Atom_Movement : MonoBehaviour
 {
-
-
     Vector3 AtomMovement;
+    Vector3 Target = Vector3.zero;
 
     Rigidbody2D Atom_Rigidbody;
+    GameObject TargetObject;
 
-    float AtomMovementSpeed = 10;
-
-
+    float AtomMovementSpeed = 5;
 
     // Start is called before the first frame update
     void Start()
     {
         AtomMovement = new Vector3();
+
         Atom_Rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    //Fixed Update is used for physics as framerate and physics are updated at different intervals 
+    private void FixedUpdate()
     {
-        
+        TargetObject = GameObject.FindGameObjectWithTag("Object");
+
+        Target = TargetObject.transform.position;
+
+        Vector3 direction = (Target - transform.position).normalized;  //Gets direction of target
+
+        Atom_Rigidbody.velocity = direction * AtomMovementSpeed;    //Sets Object velocity
     }
 }

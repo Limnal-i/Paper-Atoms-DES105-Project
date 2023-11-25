@@ -193,4 +193,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26bdda3e7163eb4bbc4662039b4bdf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 2317302593954004708, guid: 6d6ec7dad48be3a44b73cdb8cf536b7a, type: 3}
+  playerObject: {fileID: 2317302593954004708, guid: 6d6ec7dad48be3a44b73cdb8cf536b7a, type: 3}
+  AtomObject: {fileID: 8220415910594035160, guid: d5051eb262acb35418fbb87f8ec0de99, type: 3}
