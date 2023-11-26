@@ -1,16 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
-public class Atom_ChildMovement : MonoBehaviour
+public class PlayerAtomChildMovement : MonoBehaviour
 {
     Rigidbody2D Atom_Rigidbody;
+    //Atom_Movement targetAtomMovement;
 
     GameObject targetAtomMovement;
-
-    ObjectManager objectManager;
 
     Vector3 ChildAtomMovement;
 
@@ -19,9 +17,7 @@ public class Atom_ChildMovement : MonoBehaviour
     {
         Atom_Rigidbody = GetComponent<Rigidbody2D>();
 
-        objectManager = GetComponent<ObjectManager>();
-
-        targetAtomMovement = objectManager.getNearestObject("Atom");
+        targetAtomMovement = GameObject.FindGameObjectWithTag("PlayerAtom"); /// returns closest Atom (nonplayer)
     }
 
     //Fixed Update is used for physics as framerate and physics are updated at different intervals 
@@ -29,7 +25,7 @@ public class Atom_ChildMovement : MonoBehaviour
     {
         // Set Object's velocity to match nearest Atom
         ChildAtomMovement = new Vector3();
-        
+
         ChildAtomMovement = targetAtomMovement.GetComponent<Rigidbody2D>().velocity;
 
         Atom_Rigidbody.velocity = ChildAtomMovement;
