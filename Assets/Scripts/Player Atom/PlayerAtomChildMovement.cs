@@ -26,7 +26,7 @@ public class PlayerAtomChildMovement : MonoBehaviour
     //Fixed Update is used for physics as framerate and physics are updated at different intervals 
     private void FixedUpdate()
     {
-
+        Debug.Log(name + "Position is " + transform.position);
         distancefromParent = (transform.position - transform.parent.transform.position).magnitude;
 
         // Set Object's velocity to match nearest Atom

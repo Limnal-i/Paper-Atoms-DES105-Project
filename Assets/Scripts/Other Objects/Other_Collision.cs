@@ -5,7 +5,7 @@ using UnityEngine;
 public class Other_Collision : MonoBehaviour
 {
     Rigidbody2D ridgid;
-    PolygonCollider2D polycoll;
+    CircleCollider2D polycoll;
     SpriteRenderer spriterend;
 
     public GameObject playerObject;
@@ -15,7 +15,7 @@ public class Other_Collision : MonoBehaviour
     void Start()
     {
         ridgid = GetComponent<Rigidbody2D>();
-        polycoll = GetComponent<PolygonCollider2D>();
+        polycoll = GetComponent<CircleCollider2D>();
         spriterend = GetComponent<SpriteRenderer>();
     }
 
@@ -33,7 +33,7 @@ public class Other_Collision : MonoBehaviour
             Destroy(ridgid);
             Destroy(polycoll);
             //create new object at current position and rotation
-            Instantiate(playerObject, transform.position, transform.rotation, collision.transform);
+            Instantiate(playerObject, transform.position, transform.rotation, collision.transform); 
             //destroy self
             Destroy(gameObject);
         }
