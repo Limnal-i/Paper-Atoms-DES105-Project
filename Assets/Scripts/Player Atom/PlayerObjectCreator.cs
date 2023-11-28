@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public class PlayerObjectCreator : MonoBehaviour
 {
 
     PolygonCollider2D polycoll;
+
+    public GameObject playerObject;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,8 @@ public class PlayerObjectCreator : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Object"))
         {
-
+            //create new object at the position and rotation of the collided object, 
+            //Instantiate(playerObject, , false);
         }
     }
 

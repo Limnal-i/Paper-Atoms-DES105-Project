@@ -698,6 +698,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7759659253020602594, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -7759659253020602594, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7759659253020602594, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5049262608818697795, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
       propertyPath: m_Name
       value: PlayerMain
@@ -740,6 +752,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7684993387698384825, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045512369668451407, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045512369668451407, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045512369668451407, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
+      propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

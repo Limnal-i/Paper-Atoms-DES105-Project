@@ -19,6 +19,11 @@ public class Other_Collision : MonoBehaviour
         spriterend = GetComponent<SpriteRenderer>();
     }
 
+    private void FixedUpdate()
+    {
+        ridgid.velocity = Vector3.zero;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("PlayerAtom") || collision.gameObject.CompareTag("PlayerObject"))
@@ -43,6 +48,5 @@ public class Other_Collision : MonoBehaviour
             //destroy self
             Destroy(gameObject);
         }
-
     }
 }
