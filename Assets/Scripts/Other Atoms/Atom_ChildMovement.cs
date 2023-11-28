@@ -35,12 +35,4 @@ public class Atom_ChildMovement : MonoBehaviour
 
         Atom_Rigidbody.velocity = ChildAtomMovement;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("PlayerAtom") || collision.gameObject.CompareTag("PlayerObject"))
-        {
-
-        }
-    }
 }
