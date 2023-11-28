@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using UnityEditor;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
@@ -29,9 +30,17 @@ public class Atom_ChildMovement : MonoBehaviour
     {
         // Set Object's velocity to match nearest Atom
         ChildAtomMovement = new Vector3();
-        
+
         ChildAtomMovement = targetAtomMovement.GetComponent<Rigidbody2D>().velocity;
 
         Atom_Rigidbody.velocity = ChildAtomMovement;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerAtom") || collision.gameObject.CompareTag("PlayerObject"))
+        {
+
+        }
     }
 }

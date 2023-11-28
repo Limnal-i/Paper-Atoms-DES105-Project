@@ -28,7 +28,7 @@ public class Other_Collision : MonoBehaviour
             Destroy(ridgid);
             Destroy(polycoll);
             //create new object at current position and rotation
-            Instantiate(playerObject, gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(playerObject, transform.position, transform.rotation, collision.transform);
             //destroy self
             Destroy(gameObject);
         }
@@ -39,7 +39,7 @@ public class Other_Collision : MonoBehaviour
             Destroy(ridgid);
             Destroy(polycoll);
             //create new object at current position and rotation
-            Instantiate(AtomObject, gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(AtomObject, transform.position, transform.rotation, collision.transform);
             //destroy self
             Destroy(gameObject);
         }
