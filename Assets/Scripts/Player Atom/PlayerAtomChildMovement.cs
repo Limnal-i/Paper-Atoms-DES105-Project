@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
@@ -12,6 +13,8 @@ public class PlayerAtomChildMovement : MonoBehaviour
 
     Vector3 ChildAtomMovement;
 
+    float distancefromParent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +26,20 @@ public class PlayerAtomChildMovement : MonoBehaviour
     //Fixed Update is used for physics as framerate and physics are updated at different intervals 
     private void FixedUpdate()
     {
+
+        distancefromParent = (transform.position - transform.parent.transform.position).magnitude;
+
         // Set Object's velocity to match nearest Atom
         ChildAtomMovement = new Vector3();
 
         ChildAtomMovement = targetAtomMovement.GetComponent<Rigidbody2D>().velocity;
 
         Atom_Rigidbody.velocity = ChildAtomMovement;
+
+        if (distancefromParent > 0)
+        {
+            //Get back to og position!
+        }
     }
 
 }
