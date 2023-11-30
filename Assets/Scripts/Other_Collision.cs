@@ -37,7 +37,7 @@ public class Other_Collision : MonoBehaviour
             //destroy self
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Atom") || collision.gameObject.CompareTag("AtomObject"))
+        else if (collision.gameObject.CompareTag("Atom") || collision.gameObject.CompareTag("AtomObjects"))
         {
             //turn object invisible and destroy collision detection
             Destroy(spriterend);

@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherObjects: {fileID: 3610196334647225185, guid: e3207edb7d5696041a0f2aa82b903c00, type: 3}
-  npcAtoms: {fileID: 0}
+  npcAtoms: {fileID: 1058498124947564735, guid: 48ca95dd829f6254082f4d95eeaac8e1, type: 3}
 --- !u!4 &1003820080
 Transform:
   m_ObjectHideFlags: 0
