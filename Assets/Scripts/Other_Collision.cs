@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Other_Collision : MonoBehaviour
 {
+    // will need to destroy these first and then only after Instantiating the other object can this be deleted fully
     Rigidbody2D ridgid;
     CircleCollider2D polycoll;
     SpriteRenderer spriterend;
 
-    public GameObject playerObject;
-    public GameObject AtomObject;
+    // Object prefabs to spawn (use serializedField as this only need editing in prefab via the editor and will never be changed otherwise)
+    [SerializeField] GameObject playerObject;
+    [SerializeField] GameObject AtomObject;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +19,6 @@ public class Other_Collision : MonoBehaviour
         ridgid = GetComponent<Rigidbody2D>();
         polycoll = GetComponent<CircleCollider2D>();
         spriterend = GetComponent<SpriteRenderer>();
-    }
-
-    private void FixedUpdate()
-    {
-        ridgid.velocity = Vector3.zero;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

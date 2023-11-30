@@ -14,11 +14,11 @@ public class Spawn_Manager : MonoBehaviour
     GameObject[] SearchAmount;
     
     // Defining the area where game objects can spawn in
-    float maxRange_X = 340f;
-    float maxRange_Y = 180f;
+    float maxRange_X = 75f;
+    float maxRange_Y = 42f;
 
-    float minRange_X = -340f;
-    float minRange_Y = -180f;
+    float minRange_X = -75f;
+    float minRange_Y = -42f;
 
     // Store the random position
     Vector3 randPosition = Vector3.zero;
@@ -26,14 +26,14 @@ public class Spawn_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // create 500 objects and spawn 50 npc atoms at the same time
+        // create 500 objects and spawn 10 npc atoms
         for (int i = 0; i != 500; i++)
         {
             objectSpawner(otherObjects);
-            if (i < 50)
-            {
-                objectSpawner(npcAtoms);
-            }
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            objectSpawner(npcAtoms);
         }
     }
 
