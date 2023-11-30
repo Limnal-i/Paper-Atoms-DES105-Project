@@ -4,39 +4,44 @@ using UnityEngine;
 
 public class Atom_Movement : MonoBehaviour
 {
-    Vector3 AtomMovement;
+    // vector for storing target 
     Vector3 Target = Vector3.zero;
 
+    // ridgidbody for velocity
     Rigidbody2D Atom_Rigidbody;
 
+    // for storing nearest object
     GameObject TargetObject;
 
+    // Movement speed
     float AtomMovementSpeed = 5;
 
     // Start is called before the first frame update
     void Start()
     {
-        AtomMovement = new Vector3();
-
         Atom_Rigidbody = GetComponent<Rigidbody2D>();
     }
 
     //Fixed Update is used for physics as framerate and physics are updated at different intervals 
     private void FixedUpdate()
     {
-        //TargetObject = getNearestObject();
-
+        // finds closest object with "object" tag
         TargetObject = getNearestObject("Object");
 
+        // sets object as target position
         Target = TargetObject.transform.position;
 
-        Vector3 direction = (Target - transform.position).normalized;  //Gets direction of target
+        //Gets direction of target
+        Vector3 direction = (Target - transform.position).normalized;
 
-        Atom_Rigidbody.velocity = direction * AtomMovementSpeed;    //Sets Object velocity
+        //Sets Atom velocity
+        Atom_Rigidbody.velocity = direction * AtomMovementSpeed;    
     }
 
     public GameObject getNearestObject(string withTag)
     {
+        // Adapted from Unity Document Example code (since it takes in a tag, can be reused if need be in future projects)
+
         GameObject[] AllObjects; // for use in for loop
 
         AllObjects = GameObject.FindGameObjectsWithTag(withTag); // Finds all tagged objects in scene
@@ -61,7 +66,6 @@ public class Atom_Movement : MonoBehaviour
                 // Checks if Object it is checking has a distance lesser than the current Max distance. Then it sets the closest object to it and updates the max distance to that.
             }
         }
-        Debug.Log(closest.name); // prints out nearest Object with correct tag once all have been checked
         return closest; // Returns nearest Object with tag
     }
 }
