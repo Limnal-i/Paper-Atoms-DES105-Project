@@ -14,11 +14,11 @@ public class Spawn_Manager : MonoBehaviour
     GameObject[] SearchAmount;
     
     // Defining the area where game objects can spawn in
-    float maxRange_X = 75f;
-    float maxRange_Y = 42f;
+    float maxRange_X = 159f;
+    float maxRange_Y = 89f;
 
-    float minRange_X = -75f;
-    float minRange_Y = -42f;
+    float minRange_X = -159f;
+    float minRange_Y = -89f;
 
     // Store the random position
     Vector3 randPosition = Vector3.zero;
