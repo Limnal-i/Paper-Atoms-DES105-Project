@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class Atom_Movement : MonoBehaviour
@@ -13,13 +14,17 @@ public class Atom_Movement : MonoBehaviour
     // for storing nearest object
     GameObject TargetObject;
 
+    GameObject AvoidThis;
+
     // Movement speed
-    float AtomMovementSpeed = 5;
+    float AtomMovementSpeed = 10;
 
     // Start is called before the first frame update
     void Start()
     {
         Atom_Rigidbody = GetComponent<Rigidbody2D>();
+
+        AvoidThis = GameObject.Find("PlayerMain");
     }
 
     //Fixed Update is used for physics as framerate and physics are updated at different intervals 
@@ -35,7 +40,7 @@ public class Atom_Movement : MonoBehaviour
         Vector3 direction = (Target - transform.position).normalized;
 
         //Sets Atom velocity
-        Atom_Rigidbody.velocity = direction * AtomMovementSpeed;    
+        Atom_Rigidbody.velocity = direction * AtomMovementSpeed;
     }
 
     public GameObject getNearestObject(string withTag)

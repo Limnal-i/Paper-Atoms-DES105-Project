@@ -27,11 +27,11 @@ public class Spawn_Manager : MonoBehaviour
     void Start()
     {
         // create 500 objects and spawn 10 npc atoms
-        for (int i = 0; i != 1000; i++)
+        for (int i = 0; i != 500; i++)
         {
             objectSpawner(otherObjects);
         }
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 10; i++)
         {
             objectSpawner(npcAtoms);
         }
@@ -41,7 +41,7 @@ public class Spawn_Manager : MonoBehaviour
     private void FixedUpdate()
     {
         SearchAmount = GameObject.FindGameObjectsWithTag("Object");
-        if (SearchAmount.Length < 950)
+        if (SearchAmount.Length < 450)
         {
             for (int i = 0; i < 50; i++)
             {
