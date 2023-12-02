@@ -7,8 +7,6 @@ TagManager:
   - Object
   - Atom
   - PlayerAtom
-  - PlayerObject
-  - AtomObjects
   layers:
   - Default
   - TransparentFX

@@ -20067,6 +20067,22 @@ PrefabInstance:
       propertyPath: m_UpdateMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4111934295723311093, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111934295723311093, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111934295723311093, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111934295723311093, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4364095638241638115, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -20117,7 +20133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9045512369668451407, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9045512369668451407, guid: 3887b4bb8b7c09640a27e665a35113c5, type: 3}
       propertyPath: m_BackGroundColor.b

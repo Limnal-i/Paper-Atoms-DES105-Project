@@ -23,7 +23,7 @@ public class Other_Collision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("PlayerAtom") || collision.gameObject.CompareTag("PlayerObject"))
+        if (collision.gameObject.CompareTag("PlayerAtom"))
         {
             //turn object invisible and destroy collision detection
             Destroy(spriterend);
@@ -34,7 +34,7 @@ public class Other_Collision : MonoBehaviour
             //destroy self
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Atom") || collision.gameObject.CompareTag("AtomObjects"))
+        else if (collision.gameObject.CompareTag("Atom"))
         {
             //turn object invisible and destroy collision detection
             Destroy(spriterend);
