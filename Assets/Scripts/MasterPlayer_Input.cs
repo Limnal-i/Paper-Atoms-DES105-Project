@@ -35,16 +35,4 @@ public class MasterPlayer_Input : MonoBehaviour
         // Directly assigns values to Attached Ridgidbody
         Player_Rigidbody.velocity = PlayerMovement;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Atom"))
-        {
-            //Gets direction of target
-            Vector3 direction = collision.transform.position.normalized;
-
-            //Sets Atom to move via force in opposite direction
-            Player_Rigidbody.AddForce(-direction * 10000);
-        }
-    }
 }
