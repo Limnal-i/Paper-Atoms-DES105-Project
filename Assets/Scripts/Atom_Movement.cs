@@ -16,11 +16,6 @@ public class Atom_Movement : MonoBehaviour
     // for storing nearest object
     GameObject TargetObject;
 
-    // for checking player position
-    GameObject AvoidThisPlayer;
-
-    bool isMovingFromPlayer = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -30,29 +25,17 @@ public class Atom_Movement : MonoBehaviour
     //Fixed Update is used for physics as framerate and physics are updated at different intervals 
     private void FixedUpdate()
     {
-        // Gets distance from nearest player object
-        AvoidThisPlayer = getNearestObject("PlayerAtom");
+        // finds closest object with "object" tag
+        TargetObject = getNearestObject("Object");
 
-        // IF ELSE WHILE HELL!
-        MovementHell();
-    }
+        // sets object as target position
+        Target = TargetObject.transform.position;
 
-    void MovementHell()
-    {
-        // if far enough, go to nearest object, else if player is too close, move away until distance is sufficent (do same with other atoms)
-        if (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) > 10 && isMovingFromPlayer == false)
-        {
-            moveToOtherObject();
-        }
-        else if (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) < 10)
-        {
-            isMovingFromPlayer = true;
-            moveAwayFromObject();
-        }
-        else if (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) > 50)
-        {
-            isMovingFromPlayer = false;
-        }
+        //Gets direction of target
+        Vector3 direction = (Target - transform.position).normalized;
+
+        //Sets Atom velocity in target direction
+        Atom_Rigidbody.velocity = direction * 10;
     }
 
     // Finds nearest gameobject with passed in Tag
@@ -85,43 +68,5 @@ public class Atom_Movement : MonoBehaviour
             }
         }
         return closest; // Returns nearest Object with tag
-    }
-
-    // Sets Atom to move towards nearest Object
-    void moveToOtherObject()
-    {
-        // finds closest object with "object" tag
-        TargetObject = getNearestObject("Object");
-
-        // sets object as target position
-        Target = TargetObject.transform.position;
-
-        //Gets direction of target
-        Vector3 direction = (Target - transform.position).normalized;
-
-        //Sets Atom velocity in target direction
-        Atom_Rigidbody.velocity = direction * 10;
-    }
-
-    // Sets Atom to move away from nearest specifed gameobject
-    void moveAwayFromObject()
-    {
-
-        // Sets closest player affiliated object as target
-        TargetObject = AvoidThisPlayer;
-
-        // sets object as target position
-        Target = TargetObject.transform.position;
-
-        //Gets direction of target
-        Vector3 direction = (Target - transform.position).normalized;
-
-        //Sets Atom to move via force in opposite direction
-        Atom_Rigidbody.AddForce(-direction * 1000);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        isMovingFromPlayer = false;
     }
 }

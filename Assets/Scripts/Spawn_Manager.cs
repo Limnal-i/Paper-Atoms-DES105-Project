@@ -31,7 +31,7 @@ public class Spawn_Manager : MonoBehaviour
         {
             objectSpawner(otherObjects);
         }
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
         {
             objectSpawner(npcAtoms);
         }
