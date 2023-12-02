@@ -119,4 +119,9 @@ public class Atom_Movement : MonoBehaviour
         //Sets Atom to move via force in opposite direction
         Atom_Rigidbody.AddForce(-direction * 1000);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        isMovingFromPlayer = false;
+    }
 }
