@@ -19,11 +19,7 @@ public class Atom_Movement : MonoBehaviour
     // for checking player position
     GameObject AvoidThisPlayer;
 
-    // for checking other atoms
-    //GameObject AvoidThisOtherAtom;
-
-    // Movement speed
-    float AtomMovementSpeed = 10;
+    bool isMovingFromPlayer = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,26 +33,25 @@ public class Atom_Movement : MonoBehaviour
         // Gets distance from nearest player object
         AvoidThisPlayer = getNearestObject("PlayerAtom");
 
-        // Gets distance from nearest OtherAtom object
-        //AvoidThisOtherAtom = getNearestObject("Atom");
-
         // IF ELSE WHILE HELL!
         MovementHell();
-
-        AtomMovementSpeed = 10;
     }
 
     void MovementHell()
     {
         // if far enough, go to nearest object, else if player is too close, move away until distance is sufficent (do same with other atoms)
-        if (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) > 10)
+        if (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) > 10 && isMovingFromPlayer == false)
         {
             moveToOtherObject();
         }
         else if (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) < 10)
         {
-            AtomMovementSpeed = 20;
-            moveAwayFromObject(AvoidThisPlayer);
+            isMovingFromPlayer = true;
+            moveAwayFromObject();
+        }
+        else if (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) > 50)
+        {
+            isMovingFromPlayer = false;
         }
     }
 
@@ -105,14 +100,15 @@ public class Atom_Movement : MonoBehaviour
         Vector3 direction = (Target - transform.position).normalized;
 
         //Sets Atom velocity in target direction
-        Atom_Rigidbody.velocity = direction * AtomMovementSpeed;
+        Atom_Rigidbody.velocity = direction * 10;
     }
 
     // Sets Atom to move away from nearest specifed gameobject
-    void moveAwayFromObject(GameObject ToAvoid)
+    void moveAwayFromObject()
     {
+
         // Sets closest player affiliated object as target
-        TargetObject = ToAvoid;
+        TargetObject = AvoidThisPlayer;
 
         // sets object as target position
         Target = TargetObject.transform.position;
@@ -120,7 +116,7 @@ public class Atom_Movement : MonoBehaviour
         //Gets direction of target
         Vector3 direction = (Target - transform.position).normalized;
 
-        //Sets Atom velocity in opposite direction
-        Atom_Rigidbody.velocity = -direction * AtomMovementSpeed;
+        //Sets Atom to move via force in opposite direction
+        Atom_Rigidbody.AddForce(-direction * 1000);
     }
 }
