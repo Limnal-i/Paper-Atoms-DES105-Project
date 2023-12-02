@@ -20,7 +20,7 @@ public class Atom_Movement : MonoBehaviour
     GameObject AvoidThisPlayer;
 
     // for checking other atoms
-    GameObject AvoidThisOtherAtom;
+    //GameObject AvoidThisOtherAtom;
 
     // Movement speed
     float AtomMovementSpeed = 10;
@@ -38,46 +38,25 @@ public class Atom_Movement : MonoBehaviour
         AvoidThisPlayer = getNearestObject("PlayerAtom");
 
         // Gets distance from nearest OtherAtom object
-        AvoidThisOtherAtom = getNearestObject("Atom");
+        //AvoidThisOtherAtom = getNearestObject("Atom");
 
         // IF ELSE WHILE HELL!
         MovementHell();
+
+        AtomMovementSpeed = 10;
     }
 
     void MovementHell()
     {
         // if far enough, go to nearest object, else if player is too close, move away until distance is sufficent (do same with other atoms)
-        if (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) > 10 && Vector3.Distance(transform.position, AvoidThisOtherAtom.transform.position) > 10)
+        if (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) > 10)
         {
             moveToOtherObject();
         }
         else if (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) < 10)
         {
-            while (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) < 15)
-            {
-                if (Vector3.Distance(transform.position, AvoidThisOtherAtom.transform.position) > 10)
-                {
-                    moveAwayFromObject(AvoidThisPlayer);
-                }
-                else
-                {
-                    moveAwayFromObject(AvoidThisOtherAtom);
-                }
-            }
-        }
-        else
-        {
-            while (Vector3.Distance(transform.position, AvoidThisOtherAtom.transform.position) < 15)
-            {
-                if (Vector3.Distance(transform.position, AvoidThisPlayer.transform.position) > 10)
-                {
-                    moveAwayFromObject(AvoidThisOtherAtom);
-                }
-                else
-                {
-                    moveAwayFromObject(AvoidThisPlayer);
-                }
-            }
+            AtomMovementSpeed = 20;
+            moveAwayFromObject(AvoidThisPlayer);
         }
     }
 

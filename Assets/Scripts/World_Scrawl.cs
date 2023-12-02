@@ -29,19 +29,19 @@ public class World_Scrawl : MonoBehaviour
     {
         if (collision.gameObject.name == "Bounds Top")
         {
-            transform.position = new Vector3(currentPlayerX, -150, 0);
+            transform.position = new Vector3(currentPlayerX, -180, 0);
         }
         if (collision.gameObject.name == "Bounds Bottom")
         {
-            transform.position = new Vector3(currentPlayerX, 150, 0);
+            transform.position = new Vector3(currentPlayerX, 180, 0);
         }
         if (collision.gameObject.name == "Bounds Left")
         {
-            transform.position = new Vector3(200, currentPlayerY, 0);
+            transform.position = new Vector3(300, currentPlayerY, 0);
         }
         if (collision.gameObject.name == "Bounds Right")
         {
-            transform.position = new Vector3(-200, currentPlayerY, 0);
+            transform.position = new Vector3(-300, currentPlayerY, 0);
         }
     }
 }
