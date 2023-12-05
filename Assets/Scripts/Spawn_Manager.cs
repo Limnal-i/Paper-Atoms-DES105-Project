@@ -37,8 +37,8 @@ public class Spawn_Manager : MonoBehaviour
         }
     }
 
-    // Constantly check amount of objects and spawn in more if needed
-    private void FixedUpdate()
+    // Constantly check amount of objects every frame and spawn in more if needed
+    void Update()
     {
         SearchAmount = GameObject.FindGameObjectsWithTag("Object");
         if (SearchAmount.Length < 450)
@@ -58,7 +58,7 @@ public class Spawn_Manager : MonoBehaviour
         return valueToReturn;
     }
 
-    // generic game object spawner
+    // generic game object spawner (creates instance of object within range)
     void objectSpawner(GameObject toSpawnIn)
     {
         randPosition.x = rand_numberPostition(minRange_X, maxRange_X);

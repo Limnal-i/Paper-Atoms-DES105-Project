@@ -9,7 +9,7 @@ public class SceneChanger : MonoBehaviour
 
     public void toGameOver()
     {
-        Debug.Log("Scene switched to gameover");
+        Debug.Log("Scene switched to EndScene");
         SceneManager.LoadScene("EndScene");
     }
 

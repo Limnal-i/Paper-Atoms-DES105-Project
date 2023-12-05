@@ -41,7 +41,7 @@ public class Atom_Movement : MonoBehaviour
     // Finds nearest gameobject with passed in Tag
     public GameObject getNearestObject(string withTag)
     {
-        // Adapted from Unity Document Example code (since it takes in a tag, can be reused if need be in future projects)
+        // Adapted from Unity Document Find Closest Object with Tag Example code (since it takes in a tag, can be reused if need be in future projects)
 
         GameObject[] AllObjects; // for use in for loop
 

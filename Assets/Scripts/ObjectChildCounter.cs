@@ -13,7 +13,10 @@ public class ObjectChildCounter : MonoBehaviour
     {
         ChildCounter = gameObject.transform.childCount;
         ChildCounter = ChildCounter--;
-        Debug.Log("You have " +  ChildCounter + " amount collected.");
+
+        // as Camera is a child, reduce count by one to only check child Objects
+
+        Debug.Log("You have " +  ChildCounter + " objects collected!");
     }
 
     public  int getChildCount()
