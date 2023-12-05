@@ -8,12 +8,6 @@ public class PlayerCheck : MonoBehaviour
 
     ObjectChildCounter counter;
 
-    Camera LevelCam;
-
-    Rigidbody2D Rigidbody;
-
-    CapsuleCollider2D Collider;
-
     // Start is called before the first frame update
     void Start()
     {
