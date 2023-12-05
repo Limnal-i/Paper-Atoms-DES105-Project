@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Spawn_Manager : MonoBehaviour
+public class SpawnerManager : MonoBehaviour
 {
     // Object prefabs to spawn (use serializedField as this only need editing in prefab via the editor and will never be changed otherwise)
     [SerializeField] GameObject otherObjects;

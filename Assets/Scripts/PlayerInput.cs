@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MasterPlayer_Input : MonoBehaviour
+public class PlayerInput : MonoBehaviour
 {
     //Allows for user to control Player Object from TopDown perspective
 

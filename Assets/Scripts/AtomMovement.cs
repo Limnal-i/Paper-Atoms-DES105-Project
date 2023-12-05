@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Atom_Movement : MonoBehaviour
+public class AtomMovement : MonoBehaviour
 {
     // Determins how atoms will move around scene
 

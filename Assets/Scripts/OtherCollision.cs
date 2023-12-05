@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Other_Collision : MonoBehaviour
+public class OtherCollision : MonoBehaviour
 {
     // will need to destroy these first and then only after Instantiating the other object can this be deleted fully
     Rigidbody2D ridgid;

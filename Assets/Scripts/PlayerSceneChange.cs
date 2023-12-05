@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerCheck : MonoBehaviour
+public class PlayerSceneChange : MonoBehaviour
 {
     SceneChanger changer;
 
