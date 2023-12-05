@@ -10,10 +10,13 @@ public class PlayerCheck : MonoBehaviour
 
     Camera LevelCam;
 
+    Rigidbody2D Rigidbody;
+
+    CapsuleCollider2D Collider;
+
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
         counter = GetComponent<ObjectChildCounter>();
         changer = GetComponent<SceneChanger>();
     }
