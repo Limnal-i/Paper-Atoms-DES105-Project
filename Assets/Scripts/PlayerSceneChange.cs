@@ -20,7 +20,11 @@ public class PlayerSceneChange : MonoBehaviour
         // Retrieve the name of this scene.
         sceneName = currentScene.name;
 
-        if (sceneName == "EndlessGameScene")
+        if (sceneName == "GameScene")
+        {
+            // Do nothing
+        }
+        else
         {
             Destroy(gameObject.GetComponent<PlayerSceneChange>());
         }

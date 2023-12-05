@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4111934295723311093}
   - component: {fileID: 2279810590616307766}
   - component: {fileID: -3505264571149812398}
+  - component: {fileID: -8089032763573484327}
   m_Layer: 0
   m_Name: PlayerMain
   m_TagString: PlayerAtom
@@ -187,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3068cccbbfb17d40a0076e58c77890e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausemenu: {fileID: 0}
 --- !u!114 &-3505264571149812398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,5 +199,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a58b5f45c373a4242aa2097e8dec5134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8089032763573484327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5049262608818697795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636c4322336781f4b90a858c8ee94008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
