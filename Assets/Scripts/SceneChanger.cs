@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
@@ -27,6 +28,17 @@ public class SceneChanger : MonoBehaviour
     {
         Debug.Log("Scene switched to Controls");
         SceneManager.LoadScene("Controls");
+    }
+
+    public void toOptions()
+    {
+        Debug.Log("Scene switched to Options");
+        SceneManager.LoadScene("Options");
+    }
+    public void ToEndlessMode()
+    {
+        Debug.Log("Scene switched to Endless Mode");
+        SceneManager.LoadScene("EndlessGameScene");
     }
 
     public void toExitApp()
