@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class Atom_Movement : MonoBehaviour

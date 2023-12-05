@@ -1,6 +1,4 @@
-
 using UnityEngine;
-
 
 public class Spawn_Manager : MonoBehaviour
 {
