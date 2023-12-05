@@ -23,6 +23,12 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void toControls()
+    {
+        Debug.Log("Scene switched to Controls");
+        SceneManager.LoadScene("Controls");
+    }
+
     public void toExitApp()
     {
         Debug.Log("Quit App");
