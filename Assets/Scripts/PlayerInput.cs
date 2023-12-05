@@ -18,6 +18,9 @@ public class PlayerInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Start
+        Time.timeScale = 1f;
+
         PlayerMovement = new Vector3();
 
         Player_Rigidbody = GetComponent<Rigidbody2D>();

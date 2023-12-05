@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      newatom-5_0: 8385362177836158050
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
