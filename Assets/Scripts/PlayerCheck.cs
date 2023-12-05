@@ -8,6 +8,8 @@ public class PlayerCheck : MonoBehaviour
 
     ObjectChildCounter counter;
 
+    MasterPlayer_Input mastInput;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,7 @@ public class PlayerCheck : MonoBehaviour
 
     private void Update()
     {
-        if (counter.getChildCount() > 5)
+        if (counter.getChildCount() > 1500)
         {
             changer.toGameOver();
         }
