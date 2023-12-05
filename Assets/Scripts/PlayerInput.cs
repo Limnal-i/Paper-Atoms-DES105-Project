@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    //Allows for user to control Player Object from TopDown perspective
-
+    // Allows for user to control Player Object from TopDown perspective
+    
     Vector3 PlayerMovement;
 
     Rigidbody2D Player_Rigidbody;
 
     float PlayerMovementSpeed = 10;
+
+
+    // Allows player to call Pause Menu
+
+    [SerializeField] GameObject pausemenu;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +21,6 @@ public class PlayerInput : MonoBehaviour
         PlayerMovement = new Vector3();
 
         Player_Rigidbody = GetComponent<Rigidbody2D>();
-
     }
 
     // Update is called once per frame
@@ -31,5 +35,12 @@ public class PlayerInput : MonoBehaviour
 
         // Directly assigns values to Attached Ridgidbody
         Player_Rigidbody.velocity = PlayerMovement;
+
+        // if ESC is pressed, pause game
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            pausemenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }

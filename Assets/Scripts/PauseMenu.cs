@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject InGameCanvas;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // if ESC is pressed, unpause
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            InGameCanvas.SetActive(false);
+            Time.timeScale = 1f;
+        }
+    }
+    public void UnPause()
+    {
+        // called by button to unpause
+        InGameCanvas.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 }
