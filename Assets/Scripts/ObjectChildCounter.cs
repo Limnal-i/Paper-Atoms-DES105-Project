@@ -13,7 +13,7 @@ public class ObjectChildCounter : MonoBehaviour
 
         // as Camera is a child, reduce count by one to only check child Objects
 
-        Debug.Log("You have " +  ChildCounter + " objects collected!");
+        Debug.Log("You have " +  ChildCounter + " particles collected!");
     }
 
     public  int getChildCount()
