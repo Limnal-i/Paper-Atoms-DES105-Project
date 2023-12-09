@@ -33,7 +33,7 @@ public class PlayerSceneChange : MonoBehaviour
     private void Update()
     {
         // when player gets amount of Objects, change scene
-        if (counter.getChildCount() > 1500)
+        if (counter.getChildCount() > 10)
         {
             changer.toGameOver();
         }
